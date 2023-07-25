@@ -29,6 +29,9 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+.details {
+  margin-top: 20px;
+}
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
@@ -48,7 +51,6 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  line-height: 1;
   font-size: 64px;
   font-weight: 400;
 }
