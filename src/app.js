@@ -22,6 +22,33 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                  alt=""
+                  width="40"
+                />
+                <div class="weaher-forecast-temperature">
+                  <span class="weather-forecast-temperature-max"> 20°</span>
+                  <span class="weather-forecast-temperature-min"> 14°</span>
+                </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -73,6 +100,7 @@ function displayCelsiusTemperature(event) {
 }
 
 search("Rome");
+displayForecast();
 
 let celsiusTemperature = null;
 
